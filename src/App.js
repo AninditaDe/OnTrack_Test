@@ -21,7 +21,7 @@ const App = ({ history, match }) => {
     if (pageParam) {
       setCurrentPage(Number(pageParam));
     }
-  }, [pageParam]);
+  }, []);
 
   const fetchBooks = useCallback(async () => {
     const response = await fetch(`${ApiUrl}/books`, {
@@ -60,7 +60,7 @@ const App = ({ history, match }) => {
       });
 
     history.replace(`/${page}`);
-  }, [history, page, fetchBooks]);
+  }, [fetchBooks]);
 
   return (
     <>
